@@ -6,7 +6,7 @@
 /*   By: ybarhdad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 02:52:23 by ybarhdad          #+#    #+#             */
-/*   Updated: 2019/10/15 22:39:43 by ybarhdad         ###   ########.fr       */
+/*   Updated: 2019/10/19 16:27:12 by ybarhdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 void	ft_putnbr_fd(int nbr, int fd)
 {
 	long	n;
-	int		sign;
 	char	c;
 
-	sign = 1;
 	n = nbr;
 	if (n < 0)
 	{

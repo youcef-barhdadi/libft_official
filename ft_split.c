@@ -6,7 +6,7 @@
 /*   By: ybarhdad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 02:41:49 by ybarhdad          #+#    #+#             */
-/*   Updated: 2019/10/18 21:39:43 by ybarhdad         ###   ########.fr       */
+/*   Updated: 2019/10/20 02:20:40 by ybarhdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,6 @@ char			**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	nb_ofwords = ft_nbofwords((char *)s, c);
-	if (nb_ofwords == 0)
-		return (NULL);
 	if (!(tab = (char **)malloc((nb_ofwords + 1) * sizeof(char*))))
 		return (NULL);
 	i = 0;

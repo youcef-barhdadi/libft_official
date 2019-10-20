@@ -6,7 +6,7 @@
 /*   By: ybarhdad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 19:33:42 by ybarhdad          #+#    #+#             */
-/*   Updated: 2019/10/18 21:32:04 by ybarhdad         ###   ########.fr       */
+/*   Updated: 2019/10/20 02:00:15 by ybarhdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	if (lst && del)
 	{
 		(del)(lst->content);
+		lst = NULL;
 		free(lst);
 	}
 }

@@ -6,7 +6,7 @@
 #    By: ybarhdad <ybarhdad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/11 09:39:28 by ybarhdad          #+#    #+#              #
-#    Updated: 2019/10/18 22:29:25 by ybarhdad         ###   ########.fr        #
+#    Updated: 2019/10/20 02:22:00 by ybarhdad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ $(NAME):
 		gcc -Wall -Werror -Wextra  -c $(SRC)
 		ar -rc $(NAME) $(OBJ)
 		ranlib $(NAME)
-bouns:	
+bonus:	
 		gcc -Wall -Werror  -Wextra -c $(SRC) $(BOU)
 		ar -rc $(NAME) $(BOBJ) $(OBJ)
 		ranlib $(NAME)
