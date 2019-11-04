@@ -6,7 +6,7 @@
 /*   By: ybarhdad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:17:48 by ybarhdad          #+#    #+#             */
-/*   Updated: 2019/10/20 02:28:35 by ybarhdad         ###   ########.fr       */
+/*   Updated: 2019/11/04 16:22:04 by ybarhdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,6 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
+char				*ft_lltoa(long long nbr);
+char				*ft_lltoa_base(long long nbr, char *basechar);
 #endif

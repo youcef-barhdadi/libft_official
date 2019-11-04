@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_ltoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybarhdad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/11 22:24:39 by ybarhdad          #+#    #+#             */
-/*   Updated: 2019/11/04 16:15:55 by ybarhdad         ###   ########.fr       */
+/*   Created: 2019/11/04 14:51:00 by ybarhdad          #+#    #+#             */
+/*   Updated: 2019/11/04 16:48:41 by ybarhdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static	int		ft_nbrlen(int nbr)
 	return (len);
 }
 
-static	void	fill(char *str, long nnbr)
+static	void	fill(char *str, long long nnbr)
 {
 	int			i;
 	int			sign;
@@ -82,9 +82,9 @@ static	void	fill(char *str, long nnbr)
 	ft_reverse(str + sign);
 }
 
-char			*ft_itoa(int nbr)
+char			*ft_lltoa(long long nbr)
 {
-	long		nnbr;
+	long long	nnbr;
 	char		*str;
 
 	nnbr = nbr;

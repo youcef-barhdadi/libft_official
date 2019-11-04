@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lltoa_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybarhdad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/11 22:24:39 by ybarhdad          #+#    #+#             */
-/*   Updated: 2019/11/04 16:15:55 by ybarhdad         ###   ########.fr       */
+/*   Created: 2019/11/04 15:22:31 by ybarhdad          #+#    #+#             */
+/*   Updated: 2019/11/04 16:45:40 by ybarhdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static	void	ft_swap(char *a, char *b)
 {
-	char tmp;
+	char	tmp;
 
 	tmp = *a;
 	*a = *b;
@@ -23,8 +23,8 @@ static	void	ft_swap(char *a, char *b)
 
 static	void	ft_reverse(char *str)
 {
-	int	len;
-	int	i;
+	int		len;
+	int		i;
 
 	len = ft_strlen(str) - 1;
 	i = 0;
@@ -36,7 +36,7 @@ static	void	ft_reverse(char *str)
 	}
 }
 
-static	int		ft_nbrlen(int nbr)
+static	int		ft_nbrlen(int nbr, int base)
 {
 	long	nnbr;
 	int		len;
@@ -52,45 +52,49 @@ static	int		ft_nbrlen(int nbr)
 	}
 	while (nnbr)
 	{
-		nnbr = nnbr / 10;
+		nnbr = nnbr / base;
 		len++;
 	}
 	return (len);
 }
 
-static	void	fill(char *str, long nnbr)
+static	void	fill(char *str, long long nbr, char *base)
 {
-	int			i;
-	int			sign;
+	int		i;
+	int		sign;
+	int		size;
 
+	size = ft_strlen(base);
 	sign = 0;
 	i = 0;
-	if (nnbr < 0)
+	if (nbr < 0)
 	{
 		str[i++] = '-';
-		nnbr = nnbr * -1;
+		nbr = nbr * -1;
 		sign = 1;
 	}
-	if (nnbr == 0)
-		str[i++] = '0';
-	while (nnbr)
+	if (nbr == 0)
 	{
-		str[i++] = (nnbr % 10) + '0';
-		nnbr = nnbr / 10;
+		str[i++] = base[0];
+	}
+	while (nbr)
+	{
+		str[i++] = base[nbr % size];
+		nbr = nbr / size;
 	}
 	str[i] = '\0';
 	ft_reverse(str + sign);
 }
 
-char			*ft_itoa(int nbr)
+char			*ft_lltoa_base(long long nbr, char *basechar)
 {
-	long		nnbr;
+	int			base;
 	char		*str;
 
-	nnbr = nbr;
-	str = (char *)malloc((sizeof(char) * ft_nbrlen(nnbr)) + 1);
+	base = ft_strlen(basechar);
+	str = (char *)malloc(sizeof(char) * ft_nbrlen(nbr, base) + 1);
 	if (!str)
 		return (NULL);
-	fill(str, nnbr);
+	fill(str, nbr, basechar);
 	return (str);
 }
