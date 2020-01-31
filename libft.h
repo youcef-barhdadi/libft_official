@@ -6,7 +6,7 @@
 /*   By: ybarhdad <ybarhdad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:17:48 by ybarhdad          #+#    #+#             */
-/*   Updated: 2020/01/31 12:47:40 by ybarhdad         ###   ########.fr       */
+/*   Updated: 2020/01/31 13:04:48 by ybarhdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,5 @@ int					ft_strequ(const char *s1, const char *s2);
 char				*ft_strnew(size_t size);
 void				ft_strdel(char *str);
 int					ft_strnequ(const char *s1, const char *s2, size_t size);
+int					ft_strcount(const char *s1, char c);
 #endif

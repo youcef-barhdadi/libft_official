@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_strcount.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybarhdad <ybarhdad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/31 12:04:54 by ybarhdad          #+#    #+#             */
-/*   Updated: 2020/01/31 12:54:06 by ybarhdad         ###   ########.fr       */
+/*   Created: 2020/01/31 13:00:45 by ybarhdad          #+#    #+#             */
+/*   Updated: 2020/01/31 14:07:08 by ybarhdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strequ(const char *s1, const char *s2)
+int ft_strcount(const char *s1, char c)
 {
-    int l1;
-    int l2;
-
-    l1 = ft_strlen(s1);
-    l2 = ft_strlen(s2);
-    if (l1 < l2)
-        return !ft_strncmp(s1, s2, l2);
-    return !ft_strncmp(s1, s2, l1);
+	int count;
+	int i;
+	
+	i = 0;
+	count = 0;
+	if (!s1)
+		return (0);
+	while (s1[i])
+	{
+		if (s1[i] == c)
+			count++;
+		i++;
+	}
+	return (count);
 }

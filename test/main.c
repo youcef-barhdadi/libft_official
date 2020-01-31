@@ -9,7 +9,7 @@ int main()
 
 
    a = ft_strnew(15);
-   int aa =ft_strnequ("aafdasfaa", "aaafdasff",2);
+   int aa =ft_strcount(NULL, 'z');
 
     printf("%d\n",aa);
 }
