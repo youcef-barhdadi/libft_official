@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybarhdad <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ybarhdad <ybarhdad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:17:48 by ybarhdad          #+#    #+#             */
-/*   Updated: 2019/11/04 16:22:04 by ybarhdad         ###   ########.fr       */
+/*   Updated: 2020/01/31 12:47:40 by ybarhdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,8 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
 char				*ft_lltoa(long long nbr);
 char				*ft_lltoa_base(long long nbr, char *basechar);
+int					ft_strequ(const char *s1, const char *s2);
+char				*ft_strnew(size_t size);
+void				ft_strdel(char *str);
+int					ft_strnequ(const char *s1, const char *s2, size_t size);
 #endif
