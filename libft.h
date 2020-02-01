@@ -6,7 +6,7 @@
 /*   By: ybarhdad <ybarhdad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:17:48 by ybarhdad          #+#    #+#             */
-/*   Updated: 2020/01/31 13:04:48 by ybarhdad         ###   ########.fr       */
+/*   Updated: 2020/02/01 19:40:43 by ybarhdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,27 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
 typedef struct		s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct  s_dlstelment
+{
+	void				*data;
+	struct s_dlstelment	*prv;
+	struct s_dlstelment	*next;
+}				t_dlstelment;
+
+typedef struct  s_dlist
+{
+	t_dlstelment		*head;
+	t_dlstelment		*tail;
+	size_t			size;
+}				t_dlist;
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *b, size_t len);
@@ -88,4 +103,9 @@ char				*ft_strnew(size_t size);
 void				ft_strdel(char *str);
 int					ft_strnequ(const char *s1, const char *s2, size_t size);
 int					ft_strcount(const char *s1, char c);
+
+
+t_dlist				*ft_dlstnew(t_dlstelment *elemt);
+t_dlstelment		*ft_dlstelemnew(void *data);
+void				ft_dlstpush(t_dlist *lst, t_dlstelment *elem);
 #endif
