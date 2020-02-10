@@ -29,7 +29,9 @@ typedef struct  s_dlstelment
 	void				*data;
 	struct s_dlstelment	*prv;
 	struct s_dlstelment	*next;
+
 }				t_dlstelment;
+
 
 typedef struct  s_dlist
 {
@@ -108,4 +110,7 @@ int					ft_strcount(const char *s1, char c);
 t_dlist				*ft_dlstnew(t_dlstelment *elemt);
 t_dlstelment		*ft_dlstelemnew(void *data);
 void				ft_dlstpush(t_dlist *lst, t_dlstelment *elem);
+void 				ft_dlstremovenode(t_dlist *lst, void *data,int (*cmp)(void *, void *));
+t_dlstelment		*ft_dlstfind(t_dlist *lst, void *data, int (*cmp)(void *, void *));
+int					ft_dlstexist(t_dlist *lst, void *data, int (*cmp)(void *, void *));
 #endif

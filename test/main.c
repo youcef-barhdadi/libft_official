@@ -1,7 +1,10 @@
 #include "../libft.h"
 #include <stdio.h>
 
-
+int ft(void *f, void *a)
+{
+    return ft_strequ(f, a);
+}
 int main()
 {
     t_dlist *list = ft_dlstnew(ft_dlstelemnew("hello"));
@@ -9,24 +12,16 @@ int main()
     ft_dlstpush(list, ft_dlstelemnew("how are"));
     ft_dlstpush(list, ft_dlstelemnew("you"));
     ft_dlstpush(list, ft_dlstelemnew("?"));
-    t_dlstelment *elem = list->head;
+   
+  
+   int elm = ft_dlstexist(list, "", ft);
 
-    while (elem)
-    {
-        printf("%s\n", (char *)elem->data);
-        elem = elem->next;
-    }
+   printf("(%d)", elm);
 
 
 
-     elem = list->head;
 
 
-    while (elem)
-    {
-        printf("%s\n", (char *)elem->data);
-        elem = elem->next;
 
-    }
     return 0;
 }
