@@ -1,13 +1,10 @@
 #include "../libft.h"
 #include <stdio.h>
-
-int ft(void *f, void *a)
+# include <errno.h>
+int ft_isfile(char *filename);
+int main(int argc, char **argv)
 {
-    return ft_strequ(f, a);
-}
-int main()
-{
-    t_dlist *list = ft_dlstnew(ft_dlstelemnew("hello"));
+/*    t_dlist *list = ft_dlstnew(ft_dlstelemnew("hello"));
     ft_dlstpush(list, ft_dlstelemnew("how"));
     ft_dlstpush(list, ft_dlstelemnew("how are"));
     ft_dlstpush(list, ft_dlstelemnew("you"));
@@ -17,7 +14,11 @@ int main()
    int elm = ft_dlstexist(list, "", ft);
 
    printf("(%d)", elm);
+*/
 
+
+	printf("%d\n", ft_isfile(argv[1]));
+	perror("ee");
 
 
 

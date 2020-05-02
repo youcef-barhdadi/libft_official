@@ -17,6 +17,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <sys/types.h>
+# include <sys/stat.h>
 
 typedef struct		s_list
 {
@@ -105,6 +107,8 @@ char				*ft_strnew(size_t size);
 void				ft_strdel(char *str);
 int					ft_strnequ(const char *s1, const char *s2, size_t size);
 int					ft_strcount(const char *s1, char c);
+int				ft_isfile(char *filename);
+int 				fT_isdir(char *filename);
 
 
 t_dlist				*ft_dlstnew(t_dlstelment *elemt);
