@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 */
 
 
-	printf("%d\n", ft_isfile(argv[1]));
+	printf("%s\n", ft_createpath(argv[1], argv[2]));
 	perror("ee");
 
 

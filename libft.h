@@ -109,6 +109,8 @@ int					ft_strnequ(const char *s1, const char *s2, size_t size);
 int					ft_strcount(const char *s1, char c);
 int				ft_isfile(char *filename);
 int 				fT_isdir(char *filename);
+char				*ft_filename(char *filename);
+char				*ft_createpath(char *soure, char *filename);
 
 
 t_dlist				*ft_dlstnew(t_dlstelment *elemt);
