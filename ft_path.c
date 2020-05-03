@@ -29,9 +29,9 @@ char *ft_createpath(char *base, char *filename)
 		slash = ft_strdup(base);
 	else
 		slash = ft_strjoin(base, "/");
-	free(slash);
 	path = ft_strjoin(slash, filename);
 
+	free(slash);
 	return path;
 	
 }
